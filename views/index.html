@@ -1,7 +1,28 @@
-<h1>{{ title }}</h1>
-<p>Esto es un esqueleto de un template.</p>
-<ul>
-{% for person in people %}
-  <li>{{ person.name }}</li>
-{% endfor %}
-</ul>
+{% extends "layout.html" %}
+
+{% block content %}
+  
+  <div class="page-header">
+    <h1>Welcome to Twitter.js!</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <img src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg"><br>
+      <b>Your Name</b><br>
+      100 followers
+    </div>
+    <div class="col-md-9">
+    
+      <!-- display tweets here -->
+      {% for tweet in tweets %}
+      <div class="comentario">
+        <img src='https://media.licdn.com/dms/image/C4D03AQFX84uohNYAwQ/profile-displayphoto-shrink_800_800/0?e=1542844800&v=beta&t=kx-iKFoGCdZCdvkoxAs72iggvRWWxBRSovFKoAmbnqY' style="height:60px; float:left; margin: 5px" >
+        <li style= "font-weight: bold; list-style: none; padding-top:10px">{{tweet.name}}</li> 
+        <li style="list-style: none; margin-top:10px">{{tweet.content}}</li>
+      </div>
+      {% endfor %}
+      
+    </div>
+  </div>
+    
+{% endblock %}

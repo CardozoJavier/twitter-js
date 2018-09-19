@@ -1,5 +1,6 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
+const routes = require('./routes');
 
 const app= express();
 
@@ -19,14 +20,6 @@ app.set('view engine', 'html');
 
 app.engine('html', nunjucks.render);
 
-var people=[{name: 'Gandalf'}, {name: 'Frodo'}, { name: 'Hermione'}];
-
-console.log(people);
-
-app.get('/',function(req, res){
-    res.render('index',{title:'Un ejemplo', p:'Esto es un esqueleto de un template.', people:people});
-});
-
-
+app.use('/', routes);
 
 nunjucks.render('index.html');
