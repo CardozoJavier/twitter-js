@@ -18,7 +18,7 @@ var middleGreeter = function (req,res,next){
 
 app.use(middleGreeter);
 
-app.listen('3031', function(){console.log('listening at 3031')});
+app.listen('3032', function(){console.log('listening at 3032')});
 
 nunjucks.configure('views', { noCache: true });
 
