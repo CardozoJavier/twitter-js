@@ -4,12 +4,12 @@ const router = express.Router();
 const tweetBank = require('../tweetBank');
 
 router.get('/', function (req, res) {
-  let tweets = tweetBank.list();
+  var tweets = tweetBank.list();
   res.render( 'index', { tweets: tweets, showForm: true } );
 });
 
-router.get('/stylesheets/styles.css', function (req, res) {
-    res.sendFile( '/home/fersiri/twitterjs/public/stylesheets/style.css');
+router.get('/stylesheets/style.css', function (req, res) {
+    res.sendFile('/home/javi/Desktop/Bootcamp/twitter-js/public');
 }); 
 
 router.get('/users/:name', function(req, res) {
@@ -22,7 +22,7 @@ router.get('/users/:name', function(req, res) {
 
 router.get('/tweets/:id', function(req, res) {
   var id = Number(req.params.id);
-  console.log(id);
+  //console.log(id);
   var list = tweetBank.find( { uID: id } );
   console.log(list);
   res.render( 'index', { tweets: list } );

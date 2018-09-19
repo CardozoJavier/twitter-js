@@ -19,10 +19,6 @@ body {
   height: 60px;
   background-color: #f5f5f5;
 }
-.comentario{
-  margin: 30px;
-  color: #3399ff;
-}
 
 /* Custom page CSS
 -------------------------------------------------- */
@@ -61,3 +57,8 @@ code {
   font-weight: bold;
 }
 
+.comentario{
+  margin: 30px;
+  color: #3399ff;
+  background-color: black;
+}

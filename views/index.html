@@ -3,20 +3,21 @@
 {% block content %}
   
   <div class="page-header">
-    <h1>Welcome to Twitter.js!</h1>
+    <h1 style='padding-top: 5vh'>Welcome to Twitter.js!</h1>
   </div>
   <div class="row">
     <div class="col-md-3">
       <img src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg"><br>
       <b>ElJaviCardozo</b><br>
       100 followers
+
       {% if showForm %}
         <form action="/" method="POST">
-          <h2 style="margin-left:65px">Tu tweet acá</h2>
+          <h2 style="margin-left:5vh">Tu tweet acá</h2>
           <label for="name_field">Name:</label>
-          <input {%if nombre %}value={{ nombre }} {% endif %} name="name" type="text" id="name_field" style="margin: 10px; width: 190px" />
+          <input {%if nombre %}value={{ nombre }} {% endif %} name= "name" type="text" id="name_field" style="margin-left: 1vh; margin-bottom: 2vh; width: 30vh; height: 10" />
           <label for="text_field">Text:</label>
-          <input name="content" type="text" id="text_field" style="width: 190px; height: 200px; margin: 17px" />
+          <input name="content" type="text" id="text_field" style= "width: 30vh; height: 20vh; margin-bottom: 2vh; margin-left: 3vh" />
           <input type="submit" value="Submit" class=" btn btn-info" style="margin-left: 18vh" />
         </form>
       {% endif %}
@@ -26,9 +27,9 @@
       <!-- display tweets here -->
       {% for tweet in tweets %}
       <div class="comentario">
-        <img src='https://media.licdn.com/dms/image/C4D03AQFX84uohNYAwQ/profile-displayphoto-shrink_800_800/0?e=1542844800&v=beta&t=kx-iKFoGCdZCdvkoxAs72iggvRWWxBRSovFKoAmbnqY' style="height:60px; float:left; margin: 5px" >
-        <li style= "font-weight: bold; list-style: none; padding-top:10px">{{tweet.name}}</li> 
-        <li style="list-style: none; margin-top:10px">{{tweet.content}}</li>
+        <img src='https://media.licdn.com/dms/image/C4D03AQFX84uohNYAwQ/profile-displayphoto-shrink_800_800/0?e=1542844800&v=beta&t=kx-iKFoGCdZCdvkoxAs72iggvRWWxBRSovFKoAmbnqY' style="height: 10vh; float:left; margin-right: 2vh" >
+        <li style= 'color: #3399ff; font-weight: bold; list-style: none; margin-top: 5vh;'>{{tweet.name}}</li> 
+        <li style= 'color: #3399ff; list-style: none; margin-top: 2vh'>{{tweet.content}}</li>
       </div>
       {% endfor %}
       
