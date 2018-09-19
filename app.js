@@ -1,8 +1,14 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
 const routes = require('./routes');
+const bodyParser = require('body-parser');
 
 const app= express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(bodyParser.json());
+
 
 var middleGreeter = function (req,res,next){
     if(req.method==='GET') console.log('que pasa por acá');
@@ -12,7 +18,7 @@ var middleGreeter = function (req,res,next){
 
 app.use(middleGreeter);
 
-app.listen('3000', function(){console.log('listening at 3000')});
+app.listen('3031', function(){console.log('listening at 3031')});
 
 nunjucks.configure('views', { noCache: true });
 

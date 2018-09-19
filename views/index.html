@@ -10,6 +10,16 @@
       <img src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg"><br>
       <b>Your Name</b><br>
       100 followers
+      {% if showForm %}
+        <form action="/" method="POST">
+          <h2 style="margin-left:65px">Tu tweet acá</h2>
+          <label for="name_field">Name:</label>
+          <input name="name" type="text" id="name_field" style="margin: 10px; width: 190px" />
+          <label for="text_field">Text:</label>
+          <input name="content" type="text" id="text_field" style="width: 190px; height: 200px; margin: 17px" />
+          <input type="submit" value="Submit" class=" btn btn-info" style="margin-left: 18vh" />
+        </form>
+      {% endif %}
     </div>
     <div class="col-md-9">
     

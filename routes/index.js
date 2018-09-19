@@ -5,7 +5,7 @@ const tweetBank = require('../tweetBank');
 
 router.get('/', function (req, res) {
   let tweets = tweetBank.list();
-  res.render( 'index', { tweets: tweets } );
+  res.render( 'index', { tweets: tweets, showForm: true } );
 });
 
 router.get('/stylesheets/styles.css', function (req, res) {
@@ -26,6 +26,13 @@ router.get('/tweets/:id', function(req, res) {
   var list = tweetBank.find( { uID: id } );
   console.log(list);
   res.render( 'index', { tweets: list } );
+});
+
+router.post('/', function(req, res) {
+  var newPost = req.body;
+  tweetBank.add( newPost.name, newPost.content, tweetBank.getID());
+  console.log(tweetBank.data);
+  res.redirect('/');
 });
 
 module.exports = router;

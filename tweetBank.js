@@ -34,9 +34,9 @@ for (let i = 0; i < 10; i++) {
     add( getFakeName(), getFakeTweet(), getID() );
 }
 
-module.exports = { add: add, list: list, find: find };
+module.exports = { add: add, list: list, find: find, getID:getID, data:data };
 
-console.log(data);
+
 
 
 
