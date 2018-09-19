@@ -10,7 +10,7 @@ router.get('/', function (req, res) {
 
 router.get('/stylesheets/styles.css', function (req, res) {
     res.sendFile( '/home/fersiri/twitterjs/public/stylesheets/style.css');
-});
+}); 
 
 router.get('/users/:name', function(req, res) {
   var name = req.params.name;
@@ -20,6 +20,12 @@ router.get('/users/:name', function(req, res) {
   res.render( 'index', { tweets: list } );
 });
 
-
+router.get('/tweets/:id', function(req, res) {
+  var id = Number(req.params.id);
+  console.log(id);
+  var list = tweetBank.find( { uID: id } );
+  console.log(list);
+  res.render( 'index', { tweets: list } );
+});
 
 module.exports = router;

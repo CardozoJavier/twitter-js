@@ -2,8 +2,8 @@ const _ = require('lodash');
 
 var data = [];
 
-function add (name, content) {
-    data.push({ name: name, content: content });
+function add (name, content,ID) {
+    data.push({ name: name, content: content, uID:ID });
 };
 
 function list () {
@@ -26,12 +26,18 @@ const getFakeTweet = function() {
     const awesome_adj = ['increible', 'emocionante', 'increible', 'gracioso', 'dulce', 'cool',  'sorprendente', 'impresionante'];
     return "Plataforma 5 es " + randArrayEl(awesome_adj) + "! Los profesores simplemente son " + randArrayEl(awesome_adj) + ". #P5Love #codedreams";
 };
+const getID = function(){
+    return Math.ceil(Math.random()*10000);    
+}
 
 for (let i = 0; i < 10; i++) {
-    add( getFakeName(), getFakeTweet() );
+    add( getFakeName(), getFakeTweet(), getID() );
 }
 
 module.exports = { add: add, list: list, find: find };
+
+console.log(data);
+
 
 
 
